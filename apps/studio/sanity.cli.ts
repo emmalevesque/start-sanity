@@ -1,8 +1,7 @@
-import path from "node:path";
 import { Logger } from "@workspace/logger";
 import "dotenv/config";
+import path from "node:path";
 import { defineCliConfig } from "sanity/cli";
-import tsconfigPaths from "vite-plugin-tsconfig-paths";
 
 const logger = new Logger("SanityCLI");
 
@@ -60,8 +59,19 @@ export default defineCliConfig({
   deployment: {
     autoUpdates: false,
   },
+  schemaExtraction: {
+    enabled: true,
+    enforceRequiredFields: true,
+  },
+  typegen: {
+    enabled: true,
+    formatGeneratedCode: true,
+    path: "../../packages/sanity/src/**/*.{ts,tsx,js,jsx}",
+    schema: "schema.json",
+    generates: "../../packages/sanity/src/sanity.types.ts",
+    overloadClientMethods: true,
+  },
   vite: {
-    plugins: [tsconfigPaths()],
     resolve: {
       alias: {
         "@": path.resolve(__dirname, "."),
