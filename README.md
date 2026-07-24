@@ -8,8 +8,6 @@ It is designed for teams that want a production-ready page-builder starter with
 visual editing, shared packages, and a clear split between the web app and the
 CMS.
 
-![Turbo Start Sanity](https://raw.githubusercontent.com/robotostudio/turbo-start-sanity/main/assets/og-image.png)
-
 ## What is included
 
 - `apps/web`: Next.js 16 App Router frontend with React 19, Tailwind CSS v4,
@@ -50,7 +48,7 @@ packages/
 ### Create a new project from the template
 
 ```sh
-npm create sanity@latest -- --template robotostudio/turbo-start-sanity
+npm create sanity@latest -- --template emmalevesque/turbo-start-sanity
 ```
 
 ### Install dependencies
